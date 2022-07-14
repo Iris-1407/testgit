@@ -1,0 +1,192 @@
+:root {
+  box-sizing: border-box;
+  /* перестройка шрифта */
+  /* все размеры относятся к отступам внутренним и внешним какие задаем */
+  font-size: calc(1vw + 0.6em);
+  /* учитывает два пераметра - ширина экрана и доплюсовываем - размер 0.6ем и доплюсовываем 1  */
+}
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+}
+/* *****************************************************************************************ССылки********************************************************************************************** */
+a:link {
+  color: blue;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:visited {
+  color: rgb(129, 129, 196);
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  color: rgb(213, 22, 22);
+}
+/* *****************************************************************************************Шапка********************************************************************************************* */
+header {
+  padding: 0.5em 1em;
+}
+.title > h1 {
+  color: rgb(31, 28, 28);
+  text-transform: uppercase;
+  font-size: 1.5em;
+  margin: 0.25em 0;
+}
+.slogan {
+  color: gray;
+  font-size: 12px;
+}
+/* ****************************************************************************************Aside********************************************************************************************* */
+
+.hero {
+  padding: 2em 1.5em;
+  text-align: center;
+  background: url(coffee-beans-small1.jpg);
+  background-size: 100%;
+  color: white;
+  text-shadow: gray;
+}
+
+/* ****************************************************************************************main********************************************************************************************* */
+main {
+  padding: 1.2em;
+  text-align: justify;
+}
+.subtitle {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+/* ****************************************************************************************menu********************************************************************************************* */
+.menu {
+  position: relative;
+}
+.menu-toggle {
+  position: absolute;
+  top: -1.5em;
+  right: 0.1em;
+  box-sizing: 0;
+  background-color: transparent;
+  font-size: 2.3em;
+  width: 44px;
+  height: 44px;
+  line-height: 35px;
+  overflow: hidden;
+  white-space: nowrap; /* пробелы между словами */
+  text-indent: 5em; /* отступ строки */
+}
+.menu-toggle::after {
+  position: absolute;
+  top: 0.2em;
+  left: 0.1em;
+  display: block;
+  content: "\2261";
+  text-indent: 0;
+}
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 0;
+}
+.menu.is-open .menu-dropdown {
+  display: block;
+}
+/***************************************************************************************выпадающее меню* ******************************************************************************************** */
+
+.nav-menu {
+  margin: 0;
+  padding: 0;
+  border: 1px solid grey;
+  background: black;
+  color: white;
+}
+.nav-menu > li + li {
+  border-top: 1px solid grey;
+}
+.nav-menu > li > a {
+  display: block;
+  padding: 0.7em 1em;
+  color: white;
+  font-weight: normal;
+}
+@media (min-width: 560px) {
+  .title > h1 {
+    font-size: 2.2rem;
+    color: brown;
+  }
+  .hero {
+    padding: 2.5em 2em;
+    font-size: 2em;
+  }
+  .menu-toggle {
+    display: none;
+  }
+  .menu-dropdown {
+    display: block;
+    position: static;
+  }
+  .nav-menu {
+    display: flex;
+    border: 0;
+    padding: 0 1em;
+    list-style-type: none;
+  }
+  .nav-menu > li + li {
+    border: 0;
+  }
+  .nav-menu > li {
+    flex: 1;
+  }
+  .nav-menu > li > a {
+    padding: 0.3em;
+    text-align: center;
+  }
+  .row {
+    display: flex;
+    margin-left: -0.75em;
+    margin-right: -0.75;
+  }
+  .colom {
+    flex: 1;
+    margin-left: 0.75em;
+    margin-right: 0.75em;
+  }
+  p {
+    margin: 1em;
+  }
+  .subtitle {
+    margin-left: 1em;
+}
+/* на экранах срабатывает это правило если выше 560пк, если ниже срабатывает правило выше*/
+@media(min-width: 35em) {
+  .hero{
+    padding: 5em 3em;
+    font-size: 1.2rem;
+    background: url(coffee-beans-medium1.jpg);
+  }
+}
+
+@media (min-width: 50em) {
+  .page-header{
+    padding: 1.2em 4 em;
+  
+  }
+  .hero{
+    padding: 7em 6em;
+  }
+  .main{
+    padding: 2em 4em;
+  }
+  :root{
+    font-size: 1.2em;
+  }
+  .hero{
+    padding: 7em 4em;
+    background: url(coffee-beans1.jpg);
+  }
+}
